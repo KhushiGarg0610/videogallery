@@ -11,11 +11,45 @@
 
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Zen+Antique+Soft&display=swap" rel="stylesheet">
+
+
+<link href="https://fonts.googleapis.com/css2?family=Lato:ital@1&family=Zen+Antique+Soft&display=swap" rel="stylesheet">
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
         <!-- Styles -->
         <style>
             body {
                 font-family: 'Nunito', sans-serif;
+            }
+            h2{
+                font-family:'Zen Antique Soft', serif;;
+            }
+            .heading{
+                color:white;
+                background-color:black;
+                padding-top:10px;
+                padding-bottom:5px;
+                text-align:center;
+            }
+            .form{
+                margin-top:50px;
+                padding:40px;
+                border: 1px solid black;
+                border-radius: 5%;
+            }
+            label{
+                display:inline-block;
+            }
+            .btn{
+                /* border-radius:10%; */
+                /* background-color:yellow;
+                color:black; */
+                display:inline-block;
+                font-family:'Zen Antique Soft', serif;
+                font-family: 'Lato', sans-serif;
+/* font-family: 'Zen Antique Soft', serif; */
             }
         </style>
     <!-- </head> -->
@@ -27,12 +61,17 @@
     }
     @endforeach
     @endif -->
+    <div class="row">
+        <div class="heading col-lg-12">
+            <h1>Movie Magic</h1>
+        </div>
+    </div>
             <div class="row">
                 <div class="col-md-4">
                   
                
                 </div>
-                <div class="col-md-4">
+                <div class="form col-md-4">
                 <h2 align='center'>Input form</h2>
                 <form action="/videoUploaded" method = "post" enctype="multipart/form-data">
                 @csrf     
@@ -58,7 +97,7 @@
                          @enderror
                         </div>
                      <div class="form-group">
-                         <label for="imageUpload"> Thumbnail</label><br>
+                        <br> <label for="imageUpload"> Thumbnail : &nbsp;</label>
                         
                          <input type="file" name="thumbnail" class="form-control-image" accept="image/*"> <br>
                          @error('thumbnail')
@@ -66,15 +105,16 @@
                          @enderror
                         </div>
                      <div class="form-group">
-                         <label for="videoUpload"> Video</label><br>
+                         <br><label for="videoUpload"> Video : &nbsp;</label>
                          <input type="file" name="video" class="form-control-image" accept="video/*"> <br>
                          @error('video')
                         <div class="alert alert-danger">{{ $message }}</div>
                          @enderror
                         </div><br>
                       <button type="submit" class="btn btn-primary">Submit</button>
-                      </form>
+                      </form>             
         <a href="/gallery"><button class="btn btn-success">View Gallery</button></a>
+        
         </div>
     </div>
         </div>

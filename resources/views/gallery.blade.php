@@ -43,43 +43,59 @@ figcaption { font-style: italic; font-size: 0.8em; color: grey; line-height: 1.4
 img{
     height:200px;
     width:auto;
+    margin-top:10px;
 }
 .card{
     margin:10px;
 }
 h1{
-    margin:20px;
+    /* margin:20px;
     padding:10px;
     text-align:center;
     color:white;
-    background-color:#014f86;
+    background-color:#014f86; */
 }
-.row{
+.gallery_part{
     display:flex;
-    justify-content:space-around;
+    justify-content:start;
+    /* align-content:start; */
 }
 .exit{
     margin:20px;
     background-color:#014f86;
 }
+.heading{
+                color:white;
+                background-color:black;
+                padding-top:10px;
+                padding-bottom:5px;
+                text-align:center;
+                margin-bottom:30px;
+            }
 
 
 </style>
 </head>
 <body>
-<h1>GALLERY</h1>
+
 
 <!--  -->
 
 
 
-
+<div class="row">
+        <div class="heading col-lg-12">
+            <h1>Movie Magic</h1>
+        </div>
+    </div>
 
 
   
 <div class="container-fluid">
     <div class="row">
-    @foreach($data as $thumb)
+      <div class="col-md-1"><a href="/" class="exit btn btn-dark">Upload files</a></div>
+      <div class="gallery_part col-md-11">
+      @foreach($data as $thumb)
     <div class="card" style="width: 18rem;">
         <a href="{{$thumb->video}}">
             <img class="card-img-top" src="{{$thumb->nail}}" alt="Card image cap">
@@ -90,11 +106,13 @@ h1{
             <a href="{{$thumb->video}}" class="btn btn-primary">Go to video</a>
         </div></div>
   @endforeach
+      </div>
+    
  
 </div>
 </div>
 
-<a href="/" class="exit btn btn-dark">Go to Uploading files</a>
+
 
 
 
