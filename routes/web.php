@@ -16,7 +16,7 @@ use App\Http\Controllers\video_files;
 Route::get('/', function () {
     return view('welcome');
 });
-Route::get('/videogallery', function () {
+Route::get('/welcome', function () {
     return view('welcome');
 });
 Route::post("videoUploaded",[video_files::class,"post"]);
